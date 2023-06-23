@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+#container {
+    display: grid;
+    height: 100vh;
+    min-width: 100vw;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "side header" "side main";
+    overflow: auto;
+}
+
+/* Header ----------------------------------------------- */
+header {
+    display: grid;
+    grid-template-columns: auto 3fr repeat(3, auto);
+    gap: 1rem;
+    justify-items: end;
+    background-color: white;
+    box-shadow: 3px 3px 6px #ccc;
+    padding: 2rem;
+    grid-area: header;
+    position: sticky;
+}
+
+header svg {
+    width: 1.5rem;
+    align-self: center;
+}
+
+header .search {
+    border-radius: 10px;
+    outline: none;
+    background-color: #ccc;
+    border: 1px solid #ccc;
+    justify-self: stretch;
+}
+
+header button {
+    border-radius: 20px;
+    width: 100px;
+    cursor: pointer;
+    background-color: rgb(129, 130, 245);
+    color: white;
+    border: 1px solid transparent;
+}
+
+.flex {
+    justify-self: start;
+}
+
+
+/* Main ----------------------------------------------------------------- */
+#main-content {
+    padding: 2rem;
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 1rem;
+    row-gap: 2rem;
+    background-color: rgba(156, 172, 179, 0.363);
+    overflow: auto;
+}
+
+.child1 {
+    grid-row: 1/-1;
+}
+
+.child2 {
+    grid-row: 1/2;
+}
+
+.child3 {
+    grid-row: 2/-1;
+}
+
+.child1>h4,
+.child2>h4,
+.child3>h4 {
+    margin-top: 0.5rem;
+}
+
+.project {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto-fit, 200px);
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.project div {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+.trending {
+    background-color: #fff;
+    height: 100%;
+    margin-top: 0.5rem;
+}
+
+
+.announcements {
+    width: 20rem;
+    display: grid;
+    gap: 1rem;
+    background-color: #fff;
+    height: 100%;
+    margin-top: 0.5rem;
+}
+
+.announcements p {
+    font-size: 14px;
+}
+
+
+
+/* Sidebar ------------------------------------------------------------- */
+#sidebar {
+    padding: 1rem;
+    padding-right: 3rem;
+    background-color: rgb(129, 130, 245);
+    grid-area: side;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    position: sticky;
+}
+
+ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+ul li,
+h1 {
+    list-style: none;
+    font-weight: bold;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: center;
+    cursor: pointer;
+}
+
+li svg {
+    width: 1.5rem;
+    fill: #fff;
+}
+
+h1 svg {
+    width: 2rem;
+    fill: #fff;
+}
